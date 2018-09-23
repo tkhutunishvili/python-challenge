@@ -4,7 +4,7 @@ import csv
 with open ("PyBank_Resources_budget_data.csv", 'r') as csvpypoll:
     csv_reader = csv.DictReader(csvpypoll, delimiter=',')
     month_count = 0
-    t = 0
+    total = 0
     min_change = None
     max_change = None
     min_change_m = None
@@ -14,7 +14,7 @@ with open ("PyBank_Resources_budget_data.csv", 'r') as csvpypoll:
         #print(i)
         month_count = month_count + 1
         cur = int("{Profit/Losses}".format(**i))
-        t = t + cur
+        total = total + cur
         if month_count == 1:
             min_value = cur
             max_value = cur
@@ -37,7 +37,7 @@ with open ("PyBank_Resources_budget_data.csv", 'r') as csvpypoll:
     print (max_value)
     print("Change:", max_change_m,max_change,min_change_m,min_change, change_total / (month_count-1))
     print("Total Months: " + str(month_count))
-    print("Total: " + str(t))
+    print("Total: " + str(total))
 
 # 10 = 10
 # 20 = 20-10 = 10
