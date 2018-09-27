@@ -34,12 +34,8 @@ with open ("PyBank_Resources_budget_data.csv", 'r') as csvpypoll:
                 max_change_m = "{Date}".format(**i)
         prev = cur
     print("Total Months: " + str(month_count))
-    print("Total: " + str(total))
-    print("Average  Change:",round(change_total / (month_count-1),2))
-    print("Greatest Increase in Profits:",max_change_m,max_change)
-    print("Greatest Decrease in Profits:",min_change_m,min_change)
+    print("Total: $" + str(total))
+    print("Average  Change: $%.02f " % (round(change_total / (month_count-1),2)))
+    print("Greatest Increase in Profits: %s: ($%d) " % (max_change_m,max_change))
+    print("Greatest Decrease in Profits: %s: ($%d) " % (min_change_m,min_change))
 
-# 10 = 10
-# 20 = 20-10 = 10
-# 5  = 5-20 = -15
-# 15 = 15-5 = 10
